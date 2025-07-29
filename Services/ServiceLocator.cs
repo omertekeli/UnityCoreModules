@@ -16,7 +16,7 @@ namespace UnityCoreModules.Services
             }
             _services[typeof(T)] = service;
         }
-            
+
         public static void Unregister<T>() => _services.Remove(typeof(T));
         public static void ClearAll() => _services.Clear();
         public static T Get<T>()
@@ -24,6 +24,11 @@ namespace UnityCoreModules.Services
             if (_services.TryGetValue(typeof(T), out var service))
                 return (T)service;
             throw new Exception($"Service of type {typeof(T)} not found.");
+        }
+
+        public static bool IsAvailable<T>()
+        {
+            return _services.ContainsKey(typeof(T));
         }
     }
 }
