@@ -2,8 +2,8 @@
 
 Reusable core modules for Unity projects.
 
-## Included Systems
-- Service Locator
+## Included 
+- Services: ServiceLocator, EventBus, etc.
 - (Coming Soon) Helpers
 - (Coming Soon) Utils
 
